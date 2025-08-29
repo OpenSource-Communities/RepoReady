@@ -1,7 +1,15 @@
 {
-  "name": "repo-readiness-cli",
+  "name": "repoready",
   "version": "1.0.0",
-  "description": "A CLI tool to evaluate GitHub repositories for contributor readiness",
+  "description": "🚀 CLI tool to evaluate and create contributor-ready GitHub repositories",
+  "homepage": "https://github.com/OpenSource-Communities/RepoReady",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OpenSource-Communities/RepoReady.git"
+  },
+  "bugs": {
+    "url": "https://github.com/OpenSource-Communities/RepoReady/issues"
+  },
   "main": "dist/index.js",
   "bin": {
     "rr": "dist/index.js"
