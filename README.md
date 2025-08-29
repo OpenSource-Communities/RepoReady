@@ -1,6 +1,21 @@
-# Repository Readiness CLI
+<div align="center">
+  <h1>🚀 RepoReady</h1>
+  <p><strong>Evaluate & Create Contributor-Ready GitHub Repositories</strong></p>
+  
+  <a href="https://www.npmjs.com/package/repoready">
+    <img src="https://img.shields.io/npm/v/repoready?color=blue" alt="npm version">
+  </a>
+  <a href="https://github.com/OpenSource-Communities/RepoReady/blob/main/LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-green" alt="License">
+  </a>
+  <a href="https://github.com/OpenSource-Communities/RepoReady/issues">
+    <img src="https://img.shields.io/github/issues/OpenSource-Communities/RepoReady" alt="Issues">
+  </a>
+</div>
 
-A command-line tool to evaluate GitHub repositories for contributor readiness and help create new contributor-friendly projects.
+<br>
+
+A command-line tool that helps maintainers evaluate GitHub repositories for contributor readiness and create new contributor-friendly projects.
 
 ## Features
 
@@ -12,13 +27,13 @@ A command-line tool to evaluate GitHub repositories for contributor readiness an
 ## Installation
 
 ```bash
-npm install -g repo-readiness-cli
+npm install -g repoready
 ```
 
 Or run directly with npx:
 
 ```bash
-npx repo-readiness-cli [command]
+npx repoready [command]
 ```
 
 ## Usage
@@ -26,28 +41,28 @@ npx repo-readiness-cli [command]
 ### Evaluate an Existing Repository
 
 ```bash
-repo-readiness evaluate owner/repository-name
+rr evaluate owner/repository-name
 ```
 
 Example:
 ```bash
-repo-readiness evaluate facebook/react
+rr evaluate facebook/react
 ```
 
 With GitHub token for higher rate limits:
 ```bash
-repo-readiness evaluate facebook/react --token your_github_token
+rr evaluate facebook/react --token your_github_token
 ```
 
 ### Create a New Repository
 
 ```bash
-repo-readiness create --token your_github_token
+rr create --token your_github_token
 ```
 
 You can also provide repository details directly:
 ```bash
-repo-readiness create --token your_github_token --name my-awesome-project --description "A tool that does amazing things"
+rr create --token your_github_token --name my-awesome-project --description "A tool that does amazing things"
 ```
 
 ## What Gets Evaluated
@@ -97,18 +112,18 @@ You can provide the token via:
 
 ### Evaluate a popular open source project
 ```bash
-repo-readiness evaluate microsoft/vscode
+rr evaluate microsoft/vscode
 ```
 
 ### Create a new project interactively
 ```bash
-repo-readiness create --token ghp_your_token_here
+rr create --token ghp_your_token_here
 ```
 
 ### Evaluate with token for higher rate limits
 ```bash
 export GITHUB_TOKEN=ghp_your_token_here
-repo-readiness evaluate your-org/your-repo
+rr evaluate your-org/your-repo
 ```
 
 ## Requirements
