@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RepoReady Header Generator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #f0f0f0;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        .header-container {
+            margin: 20px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+
+        /* Option 1: GitHub-style gradient */
+        .header-1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        /* Option 2: Vibrant multi-color */
+        .header-2 {
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 25%, #45b7d1 50%, #f9ca24 75%, #6c5ce7 100%);
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        /* Option 3: Professional tech gradient */
+        .header-3 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        /* Option 4: Ocean waves */
+        .header-4 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #667eea 50%, #764ba2 75%, #667eea 100%);
+            background-size: 400% 400%;
+            animation: gradient 8s ease infinite;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        /* Option 5: Sunset gradient */
+        .header-5 {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 25%, #fecfef 50%, #ff9a9e 75%, #a8edea 100%);
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .title {
+            font-size: 4.5rem;
+            font-weight: 800;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin: 0;
+            letter-spacing: -2px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+            margin: 15px 0 0 0;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .instructions {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+
+        .option-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+            margin: 30px 0 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="instructions">
+        <h2>🎨 RepoReady Header Generator</h2>
+        <p>Choose your favorite gradient design below, then take a screenshot to use as your header image!</p>
+        <p><strong>Recommended size:</strong> 1200x400px for GitHub repository headers</p>
+        <p><strong>How to capture:</strong></p>
+        <ul>
+            <li>Right-click on your preferred header → "Inspect Element"</li>
+            <li>Screenshot just the header area</li>
+            <li>Or use your browser's screenshot tool to capture the specific section</li>
+        </ul>
+    </div>
+
+    <div class="option-label">Option 1: Professional Purple-Blue</div>
+    <div class="header-container">
+        <div class="header-1">
+            <h1 class="title">RepoReady</h1>
+            <p class="subtitle">Evaluate & Create Contributor-Ready Repositories</p>
+        </div>
+    </div>
+
+    <div class="option-label">Option 2: Vibrant Rainbow</div>
+    <div class="header-container">
+        <div class="header-2">
+            <h1 class="title">RepoReady</h1>
+            <p class="subtitle">Evaluate & Create Contributor-Ready Repositories</p>
+        </div>
+    </div>
+
+    <div class="option-label">Option 3: Tech Gradient</div>
+    <div class="header-container">
+        <div class="header-3">
+            <h1 class="title">RepoReady</h1>
+            <p class="subtitle">Evaluate & Create Contributor-Ready Repositories</p>
+        </div>
+    </div>
+
+    <div class="option-label">Option 4: Animated Ocean (will be static in screenshot)</div>
+    <div class="header-container">
+        <div class="header-4">
+            <h1 class="title">RepoReady</h1>
+            <p class="subtitle">Evaluate & Create Contributor-Ready Repositories</p>
+        </div>
+    </div>
+
+    <div class="option-label">Option 5: Soft Sunset</div>
+    <div class="header-container">
+        <div class="header-5">
+            <h1 class="title">RepoReady</h1>
+            <p class="subtitle">Evaluate & Create Contributor-Ready Repositories</p>
+        </div>
+    </div>
+
+</body>
+</html>
