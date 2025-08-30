@@ -1,0 +1,37 @@
+# Source files (we only want the built dist)
+src/
+tsconfig.json
+
+# Development files
+.git/
+.github/
+node_modules/
+*.log
+.DS_Store
+
+# Test files
+__tests__/
+*.test.ts
+*.test.js
+
+# Development configs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# CI/CD
+.travis.yml
+.circleci/
+.github/workflows/
+
+# Documentation (README.md should be included)
+docs/
+examples/
+
+# Build artifacts that shouldn't be published
+coverage/
+.nyc_output/
+
+# Environment files
+.env*
