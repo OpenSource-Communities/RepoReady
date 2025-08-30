@@ -3,7 +3,6 @@
 import { Command } from 'commander';
 import { createEvaluateCommand } from './commands/evaluate';
 import { createCreateCommand } from './commands/create';
-import { AsciiArt } from './utils/ascii';
 import { IntroUtils } from './utils/intro';
 
 const program = new Command();

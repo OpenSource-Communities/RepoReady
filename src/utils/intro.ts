@@ -1,11 +1,12 @@
 import chalk from 'chalk';
-import { AsciiArt } from './ascii';
+
+import { HeaderUtils } from './ascii';
 import { DisplayUtils } from './display';
 
 export class IntroUtils {
   static showWelcome(): void {
     const welcome = [
-      AsciiArt.getCompactHeader(),
+      HeaderUtils.getHeader(),
       
       chalk.bold.blue('👋 Welcome to RepoReady!'),
       '',

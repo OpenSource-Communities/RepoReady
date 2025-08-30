@@ -3,7 +3,8 @@ import { input, confirm } from '@inquirer/prompts';
 import ora from 'ora';
 import { GitHubService } from '../utils/github';
 import { DisplayUtils } from '../utils/display';
-import { AsciiArt } from '../utils/ascii';
+
+import { HeaderUtils } from '../utils/ascii';
 
 export function createCreateCommand(): Command {
   const command = new Command('create');
@@ -20,8 +21,8 @@ export function createCreateCommand(): Command {
       description?: string;
       private?: boolean;
     }) => {
-      // Show ASCII header
-      console.log(AsciiArt.getSimpleHeader());
+      // Show header
+      console.log(HeaderUtils.getHeader());
       
       try {
         // Check for required token

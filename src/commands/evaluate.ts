@@ -3,7 +3,7 @@ import ora from 'ora';
 import { GitHubService } from '../utils/github';
 import { RepositoryEvaluator } from '../evaluator';
 import { DisplayUtils } from '../utils/display';
-import { AsciiArt } from '../utils/ascii';
+import { HeaderUtils } from '../utils/ascii';
 
 export function createEvaluateCommand(): Command {
   const command = new Command('evaluate');
@@ -36,8 +36,8 @@ export function createEvaluateCommand(): Command {
 
         spinner.succeed('Evaluation complete!');
 
-        // Show ASCII header
-        console.log(AsciiArt.getSimpleHeader());
+        // Show header
+        console.log(HeaderUtils.getHeader());
         
         // Display results
         DisplayUtils.showRepositoryScore(score);
