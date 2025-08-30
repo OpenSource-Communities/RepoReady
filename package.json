@@ -14,11 +14,20 @@
   "bin": {
     "rr": "dist/index.js"
   },
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "LICENSE",
+    "CONTRIBUTING.md"
+  ],
   "scripts": {
     "build": "tsc",
     "dev": "ts-node src/index.ts",
     "start": "node dist/index.js",
-    "test": "jest"
+
+    "test": "jest",
+    "prepublishOnly": "npm run build",
+    "prepack": "npm run build"
   },
   "keywords": [
     "cli",
@@ -26,9 +35,13 @@
     "repository",
     "maintainer",
     "open-source",
-    "contributors"
+    "contributors",
+    "community",
+    "evaluation",
+    "best-practices",
+    "developer-tools"
   ],
-  "author": "",
+  "author": "OpenSource Communities",
   "license": "MIT",
   "dependencies": {
     "@inquirer/prompts": "^3.3.0",
