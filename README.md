@@ -24,7 +24,9 @@ A command-line tool that helps maintainers evaluate GitHub repositories for cont
 - **Detailed scoring**: Get a comprehensive score and rating based on best practices for open source projects
 - **Actionable recommendations**: Receive specific suggestions to improve your repository's contributor readiness
 
-## Installation
+## Installation & Setup
+
+### Option 1: Install from npm (when published)
 
 ```bash
 npm install -g repoready
@@ -36,33 +38,87 @@ Or run directly with npx:
 npx repoready [command]
 ```
 
+### Option 2: Run locally with Node.js
+
+1. **Clone the repository**:
+```bash
+git clone https://github.com/OpenSource-Communities/RepoReady.git
+cd RepoReady
+```
+
+2. **Install dependencies**:
+```bash
+npm install
+```
+
+3. **Build the project**:
+```bash
+npm run build
+```
+
+4. **Run the CLI**:
+```bash
+# Using the built JavaScript
+# node dist/index.js evaluate OpenSource-Communities/RepoReady
+node dist/index.js [command]
+
+# Or run directly with TypeScript (development)
+npm run dev [command]
+```
+
 ## Usage
 
 ### Evaluate an Existing Repository
 
+**Using npm/npx:**
 ```bash
 rr evaluate owner/repository-name
 ```
 
+**Using Node.js locally:**
+```bash
+node dist/index.js evaluate owner/repository-name
+# Or in development:
+npm run dev evaluate owner/repository-name
+```
+
 Example:
 ```bash
+# npm/npx
 rr evaluate facebook/react
+
+# Local Node.js
+node dist/index.js evaluate facebook/react
 ```
 
 With GitHub token for higher rate limits:
 ```bash
+# npm/npx
 rr evaluate facebook/react --token your_github_token
+
+# Local Node.js
+node dist/index.js evaluate facebook/react --token your_github_token
 ```
 
 ### Create a New Repository
 
+**Using npm/npx:**
 ```bash
 rr create --token your_github_token
 ```
 
+**Using Node.js locally:**
+```bash
+node dist/index.js create --token your_github_token
+```
+
 You can also provide repository details directly:
 ```bash
+# npm/npx
 rr create --token your_github_token --name my-awesome-project --description "A tool that does amazing things"
+
+# Local Node.js
+node dist/index.js create --token your_github_token --name my-awesome-project --description "A tool that does amazing things"
 ```
 
 ## What Gets Evaluated
@@ -112,25 +168,43 @@ You can provide the token via:
 
 ### Evaluate a popular open source project
 ```bash
+# Using npm/npx
 rr evaluate microsoft/vscode
+
+# Using Node.js locally
+node dist/index.js evaluate microsoft/vscode
 ```
 
 ### Create a new project interactively
 ```bash
+# Using npm/npx
 rr create --token ghp_your_token_here
+
+# Using Node.js locally
+node dist/index.js create --token ghp_your_token_here
 ```
 
 ### Evaluate with token for higher rate limits
 ```bash
+# Using npm/npx
 export GITHUB_TOKEN=ghp_your_token_here
 rr evaluate your-org/your-repo
+
+# Using Node.js locally
+export GITHUB_TOKEN=ghp_your_token_here
+node dist/index.js evaluate your-org/your-repo
 ```
 
 ## Requirements
 
-- Node.js 16 or higher
-- Git (for repository operations)
+- Node.js 20 or higher
+- npm (comes with Node.js)
+- Git (for repository operations and local development)
 - GitHub account (for creating repositories)
+
+### For Local Development
+- TypeScript knowledge (helpful for contributing)
+- All dependencies will be installed via `npm install`
 
 ## Contributing
 
