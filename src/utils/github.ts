@@ -89,7 +89,9 @@ export class GitHubService {
         return true;
       }
     }
-    return false;
+
+    // Check organization's .github repository for community health files
+    return await this.checkOrgCommunityFile(owner, 'CONTRIBUTING.md');
   }
 
   private async checkCodeOfConductFile(owner: string, repo: string): Promise<boolean> {
@@ -105,7 +107,9 @@ export class GitHubService {
         return true;
       }
     }
-    return false;
+
+    // Check organization's .github repository for community health files
+    return await this.checkOrgCommunityFile(owner, 'CODE_OF_CONDUCT.md');
   }
 
   private async checkLicenseFile(owner: string, repo: string): Promise<boolean> {
@@ -124,6 +128,15 @@ export class GitHubService {
         return true;
       }
     }
+
+    // Check organization's .github repository for license file
+    const licenseFiles = ['LICENSE', 'LICENSE.md', 'LICENSE.txt'];
+    for (const filename of licenseFiles) {
+      if (await this.checkOrgCommunityFile(owner, filename)) {
+        return true;
+      }
+    }
+    
     return false;
   }
 
@@ -149,7 +162,9 @@ export class GitHubService {
           return true;
         }
       }
-      return false;
+
+      // Check organization's .github repository for issue templates
+      return await this.checkOrgIssueTemplates(owner);
     }
   }
 
@@ -166,7 +181,9 @@ export class GitHubService {
         return true;
       }
     }
-    return false;
+
+    // Check organization's .github repository for PR template
+    return await this.checkOrgCommunityFile(owner, 'PULL_REQUEST_TEMPLATE.md');
   }
 
   private async checkLabeledIssues(owner: string, repo: string): Promise<{ hasGoodFirst: boolean; hasHelpWanted: boolean }> {
@@ -213,6 +230,89 @@ export class GitHubService {
       };
     } catch (error) {
       throw new Error(`Failed to create repository: ${error}`);
+    }
+  }
+
+  /**
+   * Check if a community health file exists in the organization's .github repository
+   * @param owner The organization name
+   * @param filename The community health file to check for (e.g., 'CODE_OF_CONDUCT.md')
+   * @returns Promise<boolean> indicating if the file exists
+   */
+  private async checkOrgCommunityFile(owner: string, filename: string): Promise<boolean> {
+    try {
+      // First check if the .github repository exists for this organization
+      await this.octokit.repos.get({
+        owner,
+        repo: '.github',
+      });
+
+      // Check for the file in various possible locations within the org's .github repo
+      const possiblePaths = [
+        `profile/${filename}`,
+        filename,
+        `.github/${filename}`
+      ];
+
+      for (const path of possiblePaths) {
+        if (await this.checkFileExists(owner, '.github', path)) {
+          return true;
+        }
+      }
+      
+      return false;
+    } catch {
+      // If .github repository doesn't exist or isn't accessible, return false
+      return false;
+    }
+  }
+
+  /**
+   * Check if issue templates exist in the organization's .github repository
+   * @param owner The organization name
+   * @returns Promise<boolean> indicating if issue templates exist
+   */
+  private async checkOrgIssueTemplates(owner: string): Promise<boolean> {
+    try {
+      // First check if the .github repository exists for this organization
+      await this.octokit.repos.get({
+        owner,
+        repo: '.github',
+      });
+
+      // Check for issue templates in the org's .github repo
+      const possiblePaths = [
+        '.github/ISSUE_TEMPLATE',
+        'ISSUE_TEMPLATE',
+        '.github/ISSUE_TEMPLATE.md',
+        'ISSUE_TEMPLATE.md'
+      ];
+
+      for (const path of possiblePaths) {
+        try {
+          const { data } = await this.octokit.repos.getContent({
+            owner,
+            repo: '.github',
+            path,
+          });
+
+          // If it's a directory with templates, check if it has content
+          if (Array.isArray(data) && data.length > 0) {
+            return true;
+          }
+          // If it's a single template file
+          if (!Array.isArray(data)) {
+            return true;
+          }
+        } catch {
+          // Continue checking other paths
+        }
+      }
+      
+      return false;
+    } catch {
+      // If .github repository doesn't exist or isn't accessible, return false
+      return false;
     }
   }
 }

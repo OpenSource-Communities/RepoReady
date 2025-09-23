@@ -123,7 +123,7 @@ node dist/index.js create --token your_github_token --name my-awesome-project --
 
 ## What Gets Evaluated
 
-The CLI evaluates repositories based on these criteria:
+The CLI evaluates repositories based on these criteria. When community health files are missing from a repository, the tool automatically checks the organization's `.github` repository for default community health files:
 
 ### Essential Elements (High Weight)
 - **README File** (20 points): Comprehensive documentation
@@ -131,17 +131,28 @@ The CLI evaluates repositories based on these criteria:
 - **Open Source License** (15 points): Valid open source license
 
 ### Community Building (Medium Weight)  
-- **Code of Conduct** (12 points): Welcoming environment guidelines
+- **Code of Conduct** (12 points): Welcoming environment guidelines (checks repository and organization's `.github` repo)
 - **Description** (10 points): Clear project description
 - **Good First Issues** (10 points): Issues labeled for beginners
 
 ### Discoverability & Organization (Lower Weight)
 - **Topics/Tags** (8 points): Relevant repository topics
-- **Issue Templates** (8 points): Standardized issue reporting
+- **Issue Templates** (8 points): Standardized issue reporting (checks repository and organization's `.github` repo)
 - **Help Wanted Issues** (8 points): Issues seeking community help
-- **Pull Request Template** (7 points): PR submission guidelines
+- **Pull Request Template** (7 points): PR submission guidelines (checks repository and organization's `.github` repo)
 - **Repository Name** (5 points): Descriptive and relevant name
 - **Active Repository** (5 points): Not archived
+
+### Organization-Level Community Health Files
+
+RepoReady automatically checks for community health files in the organization's `.github` repository when they're missing from the individual repository. This follows [GitHub's community health file standards](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file) where organizations can provide default files for all their repositories.
+
+Files checked at the organization level include:
+- `CODE_OF_CONDUCT.md`
+- `CONTRIBUTING.md` 
+- `LICENSE` (and variants)
+- Issue templates in `.github/ISSUE_TEMPLATE/`
+- `PULL_REQUEST_TEMPLATE.md`
 
 ## Scoring & Ratings
 

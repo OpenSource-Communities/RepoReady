@@ -129,19 +129,19 @@ export function generateRecommendations(results: Array<{ criteria: string; passe
         recommendations.push('Create a comprehensive README.md with project description, installation, and usage instructions');
         break;
       case 'Contributing Guidelines':
-        recommendations.push('Add a CONTRIBUTING.md file explaining how others can contribute to your project');
+        recommendations.push('Add a CONTRIBUTING.md file explaining how others can contribute to your project (can be added to the repository or organization\'s .github repository)');
         break;
       case 'Code of Conduct':
-        recommendations.push('Add a CODE_OF_CONDUCT.md file to create a welcoming environment for contributors');
+        recommendations.push('Add a CODE_OF_CONDUCT.md file to create a welcoming environment for contributors (can be added to the repository or organization\'s .github repository)');
         break;
       case 'Open Source License':
-        recommendations.push('Add an open source license (MIT, Apache 2.0, GPL, etc.) to make your project truly open source');
+        recommendations.push('Add an open source license (MIT, Apache 2.0, GPL, etc.) to make your project truly open source (can be added to the repository or organization\'s .github repository)');
         break;
       case 'Issue Templates':
-        recommendations.push('Create issue templates in .github/ISSUE_TEMPLATE/ to help contributors report bugs and request features');
+        recommendations.push('Create issue templates in .github/ISSUE_TEMPLATE/ to help contributors report bugs and request features (can be added to the repository or organization\'s .github repository)');
         break;
       case 'Pull Request Template':
-        recommendations.push('Add a pull request template to standardize contribution submissions');
+        recommendations.push('Add a pull request template to standardize contribution submissions (can be added to the repository or organization\'s .github repository)');
         break;
       case 'Good First Issues':
         recommendations.push('Create and label some issues as "good first issue" to welcome new contributors');
