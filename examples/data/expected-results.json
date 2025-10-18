@@ -1,0 +1,48 @@
+{
+  "sampleResults": [
+    {
+      "repository": "facebook/react",
+      "score": 95,
+      "rating": "Excellent",
+      "timestamp": "2024-01-15T10:30:00.000Z",
+      "expectedFeatures": [
+        "README.md",
+        "CONTRIBUTING.md",
+        "LICENSE",
+        "Issue templates",
+        "Good first issues",
+        "Code of conduct"
+      ]
+    },
+    {
+      "repository": "microsoft/vscode",
+      "score": 92,
+      "rating": "Excellent",
+      "timestamp": "2024-01-15T10:31:00.000Z",
+      "expectedFeatures": [
+        "README.md",
+        "CONTRIBUTING.md",
+        "LICENSE",
+        "Issue templates",
+        "Good first issues"
+      ]
+    }
+  ],
+  "scoringCriteria": {
+    "README.md": 20,
+    "CONTRIBUTING.md": 15,
+    "LICENSE": 10,
+    "Issue templates": 15,
+    "Pull request template": 10,
+    "Good first issues": 15,
+    "Help wanted issues": 10,
+    "Code of conduct": 5
+  },
+  "ratingThresholds": {
+    "Excellent": 90,
+    "Good": 75,
+    "Fair": 60,
+    "Needs Work": 40,
+    "Not Ready": 0
+  }
+}

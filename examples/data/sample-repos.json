@@ -1,0 +1,43 @@
+{
+  "popularRepositories": [
+    "facebook/react",
+    "microsoft/vscode",
+    "nodejs/node",
+    "tensorflow/tensorflow",
+    "vuejs/vue",
+    "angular/angular",
+    "microsoft/typescript",
+    "golang/go",
+    "rust-lang/rust",
+    "kubernetes/kubernetes"
+  ],
+  "testRepositories": [
+    "OpenSource-Communities/RepoReady",
+    "facebook/react",
+    "microsoft/typescript",
+    "nodejs/node",
+    "tensorflow/tensorflow"
+  ],
+  "categories": {
+    "frontend": [
+      "facebook/react",
+      "vuejs/vue",
+      "angular/angular"
+    ],
+    "backend": [
+      "nodejs/node",
+      "golang/go",
+      "rust-lang/rust"
+    ],
+    "tools": [
+      "microsoft/vscode",
+      "microsoft/typescript"
+    ],
+    "ai": [
+      "tensorflow/tensorflow"
+    ],
+    "infrastructure": [
+      "kubernetes/kubernetes"
+    ]
+  }
+}

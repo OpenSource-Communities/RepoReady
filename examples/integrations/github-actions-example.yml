@@ -1,0 +1,41 @@
+# examples/integrations/github-actions-example.yml
+
+# Example GitHub Actions workflow using RepoReady
+name: Repository Health Check
+
+on:
+  schedule:
+    # Run weekly on Sundays at 6 AM UTC
+    - cron: '0 6 * * 0'
+  workflow_dispatch: # Allow manual triggering
+
+jobs:
+  evaluate-repos:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Install RepoReady
+      run: npm install -g repoready
+      
+    - name: Evaluate repository
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        echo "## Repository Health Report" >> $GITHUB_STEP_SUMMARY
+        rr evaluate ${{ github.repository }} >> $GITHUB_STEP_SUMMARY
+        
+    - name: Evaluate competitor repositories
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        echo "## Competitor Analysis" >> $GITHUB_STEP_SUMMARY
+        rr evaluate microsoft/vscode >> $GITHUB_STEP_SUMMARY
+        rr evaluate facebook/react >> $GITHUB_STEP_SUMMARY
