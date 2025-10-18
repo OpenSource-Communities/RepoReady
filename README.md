@@ -217,6 +217,10 @@ node dist/index.js evaluate your-org/your-repo
 - TypeScript knowledge (helpful for contributing)
 - All dependencies will be installed via `npm install`
 
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for a detailed history of changes.
+
 ## Contributing
 
 This project follows the same best practices it evaluates! We welcome contributions and maintain:
