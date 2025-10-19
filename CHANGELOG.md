@@ -1,3 +1,27 @@
+<!--
+How to Maintain This Changelog
+
+### For Contributors
+- Add entries to the "Unreleased" section when making changes.
+- Use the appropriate category (Added, Changed, Fixed, etc.).
+- Write entries from the user's perspective.
+- Reference issue numbers when applicable.
+
+### For Maintainers
+- Move "Unreleased" items to a new version section when releasing.
+- Add the release date.
+- Update the comparison links at the bottom.
+- Tag the release in Git with the version number.
+
+### Categories
+- **Added** for new features.
+- **Changed** for changes in existing functionality.
+- **Deprecated** for soon-to-be removed features.
+- **Removed** for now removed features.
+- **Fixed** for any bug fixes.
+- **Security** in case of vulnerabilities.
+-->
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
@@ -54,27 +78,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Good first issues and help wanted labels
 - Repository topics and activity status
 
-## How to Maintain This Changelog
-
-### For Contributors
-- Add entries to the "Unreleased" section when making changes
-- Use the appropriate category (Added, Changed, Fixed, etc.)
-- Write entries from the user's perspective
-- Reference issue numbers when applicable
-
-### For Maintainers
-- Move "Unreleased" items to a new version section when releasing
-- Add the release date
-- Update the comparison links at the bottom
-- Tag the release in Git with the version number
-
-### Categories
-- **Added** for new features
-- **Changed** for changes in existing functionality
-- **Deprecated** for soon-to-be removed features
-- **Removed** for now removed features
-- **Fixed** for any bug fixes
-- **Security** in case of vulnerabilities
-
-[unreleased]: https://github.com/OpenSource-Communities/RepoReady/compare/v1.0.0...HEAD
+[unreleased]: https://github.com/OpenSource-Communities/RepoReady/compare/v1.0.0...HEAD  
 [1.0.0]: https://github.com/OpenSource-Communities/RepoReady/releases/tag/v1.0.0
