@@ -38,6 +38,8 @@ There are many ways to contribute to RepoReady:
 
 ### Getting Started
 
+> NOTE: Be sure to be assigned an issue before working on and creating a PR. If there is no issue for the PR you're working on, create the issue and allow the maintainers of the project to determine if this is something they want to pursue. Once you've been assigned an issue, proceed with the following.
+
 1. **Fork the repository** on GitHub
 
 2. **Clone your fork** locally:
