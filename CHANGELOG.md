@@ -12,6 +12,9 @@ How to Maintain This Changelog
 - Add the release date.
 - Update the comparison links at the bottom.
 - Tag the release in Git with the version number.
+- When preparing the next development cycle, recreate the [Unreleased] section
+  and add a new comparison link:
+  [unreleased]: https://github.com/OpenSource-Communities/RepoReady/compare/<latest_version>...HEAD
 
 ### Categories
 - **Added** for new features.
@@ -20,14 +23,9 @@ How to Maintain This Changelog
 - **Removed** for now removed features.
 - **Fixed** for any bug fixes.
 - **Security** in case of vulnerabilities.
--->
 
-# Changelog
-
-All notable changes to this project will be documented in this file.
-
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+### Template for Adding a New Version
+Use this block as an example when creating a new version section:
 
 ## [Unreleased]
 
@@ -48,6 +46,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Security
 - _Nothing yet_
+-->
+
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [1.0.0] - 2025-08-29
 
@@ -78,5 +84,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Good first issues and help wanted labels
 - Repository topics and activity status
 
-[unreleased]: https://github.com/OpenSource-Communities/RepoReady/compare/v1.0.0...HEAD  
 [1.0.0]: https://github.com/OpenSource-Communities/RepoReady/releases/tag/v1.0.0
