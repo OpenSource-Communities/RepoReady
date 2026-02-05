@@ -20,9 +20,13 @@ A command-line tool that helps maintainers evaluate GitHub repositories for cont
 ## Features
 
 - **Evaluate existing repositories**: Analyze any GitHub repository to see how ready it is for new contributors
-- **Create new repositories**: Set up new GitHub repositories optimized for community contributions  
+- **Create new repositories**: Set up new GitHub repositories optimized for community contributions with automatic post-creation evaluation
+- **Interactive CLI**: Built-in `intro` and `examples` commands for new users
 - **Detailed scoring**: Get a comprehensive score and rating based on best practices for open source projects
-- **Actionable recommendations**: Receive specific suggestions to improve your repository's contributor readiness
+- **Actionable recommendations**: Receive specific suggestions to improve your repository's contributor readiness (top 5 prioritized by importance)
+- **Organization-level file detection**: Automatically checks organization's `.github` repository for default community health files
+- **Smart validation**: Input validation for repository creation (name format, description length)
+- **Private repository support**: Option to create private repositories with `--private` flag
 
 ## Installation & Setup
 
@@ -102,17 +106,17 @@ node dist/index.js evaluate facebook/react --token your_github_token
 
 ### Create a New Repository
 
-**Using npm/npx:**
+**Interactive mode (recommended):**
 ```bash
+# npm/npx
 rr create --token your_github_token
-```
 
-**Using Node.js locally:**
-```bash
+# Local Node.js
 node dist/index.js create --token your_github_token
 ```
+The CLI will prompt you for repository name and description with validation.
 
-You can also provide repository details directly:
+**Non-interactive mode with flags:**
 ```bash
 # npm/npx
 rr create --token your_github_token --name my-awesome-project --description "A tool that does amazing things"
@@ -120,6 +124,14 @@ rr create --token your_github_token --name my-awesome-project --description "A t
 # Local Node.js
 node dist/index.js create --token your_github_token --name my-awesome-project --description "A tool that does amazing things"
 ```
+
+**Create a private repository:**
+```bash
+rr create --token your_github_token --private
+```
+
+**Post-creation evaluation:**
+After creating a repository, you'll be prompted to evaluate it immediately to see your starting contributor-readiness score.
 
 ## What Gets Evaluated
 
@@ -206,9 +218,35 @@ export GITHUB_TOKEN=ghp_your_token_here
 node dist/index.js evaluate your-org/your-repo
 ```
 
+## Additional Commands
+
+### Show Introduction
+```bash
+rr intro
+```
+Displays a welcome message and getting started guide.
+
+### Show Examples
+```bash
+rr examples
+```
+Displays example commands and usage patterns.
+
+### Show Version
+```bash
+rr --version
+```
+
+### Show Help
+```bash
+rr --help
+rr evaluate --help
+rr create --help
+```
+
 ## Requirements
 
-- Node.js 20 or higher
+- Node.js 16 or higher (20+ recommended)
 - npm (comes with Node.js)
 - Git (for repository operations and local development)
 - GitHub account (for creating repositories)
